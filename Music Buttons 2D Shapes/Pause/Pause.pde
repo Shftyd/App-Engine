@@ -10,6 +10,10 @@ void setup() {
    stopDraw();
    stopKeyPressed();
    stopMousePressed();
+   previousSongSetup();
+   previousSongDraw();
+   previousSongKeyPressed();
+   previousSongMousePressed();
   float musicButtonDrawX = width * 5/10;
   float musicButtonDrawY = height * 3/5;
   pauseScaleWidth = 1.0/50.0;//used to change x-axis
