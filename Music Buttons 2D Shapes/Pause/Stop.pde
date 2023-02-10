@@ -1,16 +1,15 @@
 //Global variables
-void setup() {
+void stopSetup() {
+
+}
+void stopDraw() {
 
 }
 
-void draw() {
+void stopKeyPressed() {
 
 }
 
-void keyPressed() {
-
-}
-
-void mousePressed() {
+void stopMousePressed() {
 
 }
