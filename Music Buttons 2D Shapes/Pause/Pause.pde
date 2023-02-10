@@ -1,17 +1,22 @@
 //Global Variables
 float pauseX1, pauseY2, pauseWidth, pauseHeight, pauseX2, pauseY1;
+float pauseScaleWidth, pauseScaleHeight, pauseStartDrawY;
 //
 void setup() {
   //Landscape (protrait, square)
   //Populatoin, visual data
-  fullScreen(); //displayWidth, displayHeight
-  float centerX = width * 1/2;
-  pauseWidth = width;
-  pauseX1 = centerX - pauseWidth*1/2;
-  pauseY2 = height;
-  pauseHeight = height;
-  pauseX2 = centerX + pauseWidth*1/2;
-  pauseY1 = height;
+  fullScreen(); //displayWidth, displayHeight 
+  float musicButtonDrawX = width * 5/10;
+  float musicButtonDrawY = height * 3/5;
+  pauseScaleWidth = 1.0/50.0;//used to change x-axis
+  pauseScaleHeight = 2.0/10.0; //used to change y-axis
+  println(pauseScaleWidth);
+  pauseWidth = width * pauseScaleWidth;
+  pauseX1 = musicButtonDrawX - pauseWidth - pauseWidth*1/2;
+  pauseY1 = musicButtonDrawY;
+  pauseX2 = musicButtonDrawX + pauseWidth*1/2;
+  pauseY2 = pauseY1;
+  pauseHeight =height * pauseScaleHeight;
 }//End setup
 //
 void draw() {
