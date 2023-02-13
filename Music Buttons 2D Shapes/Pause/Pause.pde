@@ -4,9 +4,7 @@ void setup() {
   //Landscape (protrait, square)
   //Populatoin, visual data
   fullScreen(); //displayWidth, displayHeight 
-  
    drawMusicButtons();
-   
   float musicButtonDrawX = width * 1/2;
   float musicButtonDrawY = height * 1/2;
   pauseScaleWidth = 1.0/50.0;//used to change x-axis
@@ -26,6 +24,7 @@ void setup() {
 }//End setup
 //
 void draw() {
+  drawMusicButtons();
   rect(pauseX1, pauseY1, pauseWidth, pauseHeight );
   rect(pauseX2, pauseY2, pauseWidth, pauseHeight);
 
