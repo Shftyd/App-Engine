@@ -4,7 +4,6 @@ float pauseScaleWidth, pauseScaleHeight, pauseStartDrawY;
 float stopX, stopY, stopWidth, stopHeight;
 //
 void drawMusicButtons() {
-  drawMusicButtons();
   drawStopButton();
 }//End drawMusicButtons
 //

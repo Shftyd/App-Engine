@@ -4,17 +4,11 @@ void setup() {
   //Landscape (protrait, square)
   //Populatoin, visual data
   fullScreen(); //displayWidth, displayHeight 
-   stopSetup();
-   stopDraw();
-   stopKeyPressed();
-   stopMousePressed();
-   previousSongSetup();
-   previousSongDraw();
-   previousSongKeyPressed();
-   previousSongMousePressed();
+  
    drawMusicButtons();
-  float musicButtonDrawX = width * 5/10;
-  float musicButtonDrawY = height * 3/5;
+   
+  float musicButtonDrawX = width * 1/2;
+  float musicButtonDrawY = height * 1/2;
   pauseScaleWidth = 1.0/50.0;//used to change x-axis
   pauseScaleHeight = 2.0/10.0; //used to change y-axis
   println(pauseScaleWidth);
@@ -24,6 +18,11 @@ void setup() {
   pauseX2 = musicButtonDrawX + pauseWidth*1/2;
   pauseY2 = pauseY1;
   pauseHeight =height * pauseScaleHeight;
+  //
+  stopX = musicButtonDrawX - (width * 14/30);
+  stopY = pauseY1;
+  stopWidth = pauseHeight;
+  stopHeight = pauseHeight ;
 }//End setup
 //
 void draw() {
