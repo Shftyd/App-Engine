@@ -1,6 +1,4 @@
 //Global Variables
-float pauseX1, pauseY2, pauseWidth, pauseHeight, pauseX2, pauseY1;
-float pauseScaleWidth, pauseScaleHeight, pauseStartDrawY;
 //
 void setup() {
   //Landscape (protrait, square)
@@ -14,6 +12,7 @@ void setup() {
    previousSongDraw();
    previousSongKeyPressed();
    previousSongMousePressed();
+   drawMusicButtons();
   float musicButtonDrawX = width * 5/10;
   float musicButtonDrawY = height * 3/5;
   pauseScaleWidth = 1.0/50.0;//used to change x-axis
