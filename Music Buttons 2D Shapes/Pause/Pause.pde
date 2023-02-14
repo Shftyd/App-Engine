@@ -5,6 +5,7 @@ void setup() {
   //Populatoin, visual data
   fullScreen(); //displayWidth, displayHeight 
    drawMusicButtons();
+
   float musicButtonDrawX = width * 1/2;
   float musicButtonDrawY = height * 1/2;
   pauseScaleWidth = 1.0/50.0;//used to change x-axis
@@ -18,9 +19,30 @@ void setup() {
   pauseHeight =height * pauseScaleHeight;
   //
   stopX = musicButtonDrawX - (width * 14/30);
-  stopY = pauseY1;
-  stopWidth = pauseHeight;
-  stopHeight = pauseHeight ;
+  stopY = height * 2/3;
+  stopWidth = pauseHeight/2;
+  stopHeight = pauseHeight/2;
+  //
+  reverseX = width * 2/10;
+  reverseY = pauseY1;
+  reverseWidth = pauseHeight/2;
+  reverseHeight = pauseHeight/2;
+  //
+  forwardX = width * 15/20; 
+  forwardY = pauseY1;
+  forwardWidth = pauseHeight/2;
+  forwardHeight = pauseHeight/2;
+  //
+  loopX = width * 13/20;
+  loopY = pauseY1;
+  loopWidth = pauseHeight/2;
+  loopHeight = pauseHeight/2;
+  //
+  muteX = width * 6/20;
+  muteY = pauseY1;
+  muteWidth = pauseHeight/2;
+  muteHeight = pauseHeight/2;
+  //
 }//End setup
 //
 void draw() {
