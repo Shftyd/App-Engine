@@ -43,6 +43,12 @@ void setup() {
   muteWidth = pauseHeight/2;
   muteHeight = pauseHeight/2;
   //
+ x1 = width *1/2;
+ y1 = height * 1/2;
+ x2 = width * 10/20;
+ y2 = height * 2/3;
+ x3 = width * 12/20;
+ y3 = height * 6/10;
 }//End setup
 //
 void draw() {
