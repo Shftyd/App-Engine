@@ -47,10 +47,15 @@ void setup() {
    forwardWidth = width * 1/70;
    forwardHeight = pauseHeight/2;
   //
-  loopX = width * 8/10;
-  loopY = pauseY1;
-  loopWidth = pauseHeight/2;
-  loopHeight = pauseHeight/2;
+  loopX1 = width * 8/10;
+  loopY1 = pauseY1;
+  loopWidth1 = pauseHeight/2;
+  loopHeight1 = pauseHeight/6;
+  
+  loopX2 = width * 8/10;
+  loopY2 = height * 11/20;
+  loopWidth2 = pauseHeight/2;
+  loopHeight2 = pauseHeight/6;
   //
   muteX = width * 2/10;
   muteY = pauseY1;

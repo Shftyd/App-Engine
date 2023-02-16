@@ -6,7 +6,8 @@ float reverseX1, reverseY1, reverseX2, reverseY2, reverseX3, reverseY3;
 float reverseX, reverseY, reverseWidth, reverseHeight;
 float forwardX1, forwardY1, forwardX2, forwardY2, forwardX3, forwardY3;
 float forwardX, forwardY, forwardWidth, forwardHeight;
-float loopX, loopY, loopWidth, loopHeight;
+float loopX1, loopY1, loopWidth1, loopHeight1;
+float loopX2, loopY2, loopWidth2, loopHeight2;
 float muteX, muteY, muteWidth, muteHeight;
 float x1, y1, x2, y2, x3, y3;
 color black=#000000, green=#00FF00, red=#FF0000, blue=#0000FF, purple=#FF00FF, white=#FFFFFF, resetcolorNightMode=#FFFF4B;//Night Mode Friendly
@@ -55,7 +56,8 @@ void drawForwardSkipButton() {
 
 void drawLoopButton() {
   fill(purple);
-  rect(loopX, loopY, loopWidth, loopHeight);
+  rect(loopX1, loopY1, loopWidth1, loopHeight1);
+  rect(loopX2, loopY2, loopWidth2, loopHeight2);
   fill(resetcolorDayMode);
 }
 
