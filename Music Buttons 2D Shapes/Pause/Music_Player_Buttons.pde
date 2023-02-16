@@ -2,7 +2,9 @@
 float pauseX1, pauseY2, pauseWidth, pauseHeight, pauseX2, pauseY1;
 float pauseScaleWidth, pauseScaleHeight, pauseStartDrawY;
 float stopX, stopY, stopWidth, stopHeight;
+float reverseX1, reverseY1, reverseX2, reverseY2, reverseX3, reverseY3;
 float reverseX, reverseY, reverseWidth, reverseHeight;
+float forwardX1, forwardY1, forwardX2, forwardY2, forwardX3, forwardY3;
 float forwardX, forwardY, forwardWidth, forwardHeight;
 float loopX, loopY, loopWidth, loopHeight;
 float muteX, muteY, muteWidth, muteHeight;
@@ -39,12 +41,14 @@ void drawStopButton() {
 //
 void drawReverseSkipButton() {
   fill(blue);
+  triangle(reverseX1, reverseY1, reverseX2, reverseY2, reverseX3, reverseY3);
   rect(reverseX, reverseY, reverseWidth, reverseHeight);
   fill(resetcolorDayMode);
 }
 
 void drawForwardSkipButton() {
   fill(green);
+  triangle( forwardX1, forwardY1, forwardX2, forwardY2, forwardX3, forwardY3);
   rect(forwardX, forwardY, forwardWidth, forwardHeight);
   fill(resetcolorDayMode);
 }
