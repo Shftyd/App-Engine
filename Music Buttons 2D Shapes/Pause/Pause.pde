@@ -23,18 +23,18 @@ void setup() {
   stopWidth = pauseHeight/2;
   stopHeight = pauseHeight/2;
   //
-  reverseX1 = width * 7.5/20;
+  reverseX1 = width * 7/20;
   reverseY1 = height * 10/20;
-  reverseX2 = width * 7.5/20;
+  reverseX2 = width * 7/20;
   reverseY2 = height * 12/20;
-  reverseX3 = width * 6.5/20;
+  reverseX3 = width * 6/20;
   reverseY3 = height * 11/20;
   
- reverseX4 = width * 6.5/20;
+ reverseX4 = width * 6/20;
  reverseY4 = height * 10/20;  
- reverseX5 = width * 6.5/20;
+ reverseX5 = width * 6/20;
  reverseY5 = height * 12/20;
- reverseX6 = width * 5.5/20;
+ reverseX6 = width * 5/20;
  reverseY6 = height * 11/20;
   //
    forwardX1 = width * 13/20;
