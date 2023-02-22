@@ -23,17 +23,19 @@ void setup() {
   stopWidth = pauseHeight/2;
   stopHeight = pauseHeight/2;
   //
-  reverseX1 = width * 8/20;
+  reverseX1 = width * 7.5/20;
   reverseY1 = height * 10/20;
-  reverseX2 = width * 8/20;
+  reverseX2 = width * 7.5/20;
   reverseY2 = height * 12/20;
-  reverseX3 = width * 7/20;
+  reverseX3 = width * 6.5/20;
   reverseY3 = height * 11/20;
   
-  reverseX = width * 17/50;
-  reverseY = pauseY1;
-  reverseWidth = width * 1/70;
-  reverseHeight = pauseHeight/2;
+ reverseX4 = width * 6.5/20;
+ reverseY4 = height * 10/20;  
+ reverseX5 = width * 6.5/20;
+ reverseY5 = height * 12/20;
+ reverseX6 = width * 5.5/20;
+ reverseY6 = height * 11/20;
   //
    forwardX1 = width * 13/20;
    forwardY1 = height * 10/20;
@@ -42,10 +44,12 @@ void setup() {
    forwardX3 = width * 14/20;
    forwardY3 = height * 11/20;
    
-   forwardX = width * 28/40;
-   forwardY = pauseY1;
-   forwardWidth = width * 1/70;
-   forwardHeight = pauseHeight/2;
+   forwardX4 = width * 14/20;
+   forwardY4 = height * 10/20;
+   forwardX5 = width * 14/20;
+   forwardY5 = height * 12/20;
+   forwardX6 = width * 15/20;
+   forwardY6 = height * 11/20;
   //
   loopX1 = width * 8/10;
   loopY1 = pauseY1;
@@ -57,7 +61,7 @@ void setup() {
   loopWidth2 = pauseHeight/2;
   loopHeight2 = pauseHeight/6;
   //
-  muteX = width * 2/10;
+  muteX = width * 3/20;
   muteY = pauseY1;
   muteWidth = pauseHeight/2;
   muteHeight = pauseHeight/2;
