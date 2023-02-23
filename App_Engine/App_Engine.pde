@@ -18,6 +18,7 @@ Minim minim; //cretes an object to access all functions
 AudioPlayer[] songs = new AudioPlayer[2]; //creates "Play List" variable holding extensions WAV, AIFF, AU, SND, and MP3;
 //
 void setup() {
+  buttonsSetup();
   //
  // minim = new Minim (this); //load from data irectory, loadFile should also load from project folder, like loadImage
   //

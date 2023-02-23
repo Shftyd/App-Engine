@@ -1,9 +1,9 @@
 //Global Variables
 //
-void setup() {
+void buttonsSetup() {
   //Landscape (protrait, square)
   //Populatoin, visual data
-  fullScreen(); //displayWidth, displayHeight 
+  //fullScreen(); //displayWidth, displayHeight 
    drawMusicButtons();
 
   float musicButtonDrawX = width * 1/2;
@@ -75,15 +75,15 @@ void setup() {
  
 }//End setup
 //
-void draw() {
+void buttonsDraw() {
   drawMusicButtons();
   rect(pauseX1, pauseY1, pauseWidth, pauseHeight );
   rect(pauseX2, pauseY2, pauseWidth, pauseHeight);
 
 }//End draw
 //
-void keyPressed () {}//End keyPressed
+void buttonsKeyPressed () {}//End keyPressed
 //
-void mousePressed() {}//End mousePressed
+void buttonsMousePressed() {}//End mousePressed
 //
 //End MAIN Program (Driver)
