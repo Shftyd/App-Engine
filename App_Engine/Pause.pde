@@ -72,7 +72,30 @@ void buttonsSetup() {
  y2 = height * 2/3;
  x3 = width * 11/20;
  y3 = height * 6/10;
+ //
+  previousSongX1 = width * 6/20;
+ previousSongY1 = height * 13/20;
+ previousSongX2 = width * 6/20;
+ previousSongY2 = height * 15/20;
+ previousSongX3 = width * 5/20;
+ previousSongY3 = height * 14/20;
  
+ previousSongX = width * 9.5/40;
+ previousSongY = height * 13/20;
+ previousSongWidth = width * 1/80;
+ previousSongHeight = height * 3/30;
+ //
+  nextSongX1 = width * 14/20;
+  nextSongY1 = height * 13/20;
+  nextSongX2 = width * 14/20;
+  nextSongY2 = height * 15/20;
+  nextSongX3 = width * 15/20;
+  nextSongY3 = height * 14/20;
+  
+  nextSongX = width * 15/20;
+  nextSongY = height * 13/20;
+  nextSongWidth = width * 1/80;
+  nextSongHeight = height * 3/30;
 }//End setup
 //
 void buttonsDraw() {

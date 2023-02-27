@@ -12,10 +12,10 @@ import ddf.minim.ugens.*;
 //
 //Global Variables
 String Path = new File("").getAbsolutePath(); //Exported Program
-String directory = "C:/songs"; //Not exported
+String directory = "//FS-052/studuser$/Gr11/a.harding/My Documents/GitHub/app-engine-review/App_Engine/songs"; //Not exported
 //
 Minim minim; //cretes an object to access all functions
-AudioPlayer[] songs = new AudioPlayer[2]; //creates "Play List" variable holding extensions WAV, AIFF, AU, SND, and MP3;
+AudioPlayer[] songs = new AudioPlayer[5]; //creates "Play List" variable holding extensions WAV, AIFF, AU, SND, and MP3;
 //
 void setup() {
   buttonsSetup();
