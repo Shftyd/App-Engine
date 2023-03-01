@@ -1,0 +1,60 @@
+//Gloabal Variables
+Minim minim; //cretes an object to access all functions
+AudioPlayer[] songs = new AudioPlayer[5]; //creates "Play List" variable holding extensions WAV, AIFF, AU, SND, and MP3
+AudioPlayer[] soundEffects = new AudioPlayer [0];
+String pathway, Fun Kid, Ghostbusters, Ice & Fire, It Was a Time, Jump;
+int currentSong=0;
+//
+void musicSetup() {
+//
+minim = new Minim (this);
+//
+//Set the Deirectory or Pathway to the music
+//
+//Reminder : finish OS_Level Code to auto rea pathway and files (See OS)
+//
+concatentionOfMusicFiles();
+songs[0] = minim.loadFileI pathway + Fun Kid );
+songs[1] = minim.loadFile( pathway + Ghostbusters);
+songs[2] = minim.loadFile( pathway + Ice & Fire );
+songs[3] = minim.loadFile( pathway + It Was a Time );
+songs[4] = minim.loadFile( pathway + Jump );
+//soundEffects[] = minim.loadFile( path + soundEffectFile );
+//
+} //End musicSetup
+//
+void drawMusic() {}
+//
+void keyPressedMusic() {
+//Music keyboard Short Cuts
+//Prototyping to copy when it works
+if ( key == 'm'|| key == 'M') {
+if ( songs[currentSong].isMuted() ) { 
+  song[currentSong].unmute();
+} else if (  songs[currentSong].position() >=  songs[currentSong].length()*4/5 ) {
+  //Students to ifnsih SMARTER Mute Button
+  //ERROR: music player breaks if song finishes
+  /* Ideas
+  - rewind the songs
+  - play the next song automatically
+  - play of notification to choose the next song
+  */
+  songs[currentSong].rewind(); //simple solution, contains ERROR
+}  else {
+  song[currentSong].mute();
+    }
+  }//End Mute Button
+}
+//
+void mousePressedMusic() {}
+//
+void concatenationOfMusicFiles() { 
+   pathway = "songs/";
+   Fun Kid = "Fun Kid.mp3";
+   Ghostbusters = "Ghostbusters.mp3";
+   Ice & Fire = "Ice & Fire.mp3";
+   It Was a Time = "It Was a Time.mp3";
+   Jump = "Jump.mp3";
+
+
+}
