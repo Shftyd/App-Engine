@@ -51,10 +51,11 @@ if ( songs[currentSong].isMuted() ) {
    //skips forward to end of song
    //ERROR: if at end, plays beginning
  songs[currentSong].skip(1000); //parameter in milliseconds
- } if else ( songs[currentSong].position() >=  songs[currentSong].length()*4/5 ) {
- }  
+ } else if ( songs[currentSong].position() >=  songs[currentSong].length()*4/5 ) {
+ }  else {
+   
    //ERROR catch: if end of snog, then next song
-  //end forwarsd
+ }//end forwarsd
  
  if ( key == 'r' || key == 'R' ){
    //spamming R means start playing at beginning of song
@@ -62,11 +63,30 @@ if ( songs[currentSong].isMuted() ) {
  } // end reverse
  //
  //single loop
- if ()  songs[currentSong].loop(1);
+ //if (key == '1') songs[currentSong].loop(1); //ERROR
+   if (key == '1') {
+   delay(songs[currentSong].length() - songs[currentSong].position() ); 
+   //ERROR: delay stops all player functions, computer doesn't recognize if
+   //       song is playing
+   songs[currentSong].loop(0);
+ }//End single loop
+ //
+ //loop infinite times
+ if ( key <= '9' && key != '1') {
+   //finish playign current song, then replay once
+   delay( songs[currentSong].length() - songs[currentSong].position() );
+   //ERROR; delay stops all player functions, computer doenst recognize if songs is playing
+   songs[currentSong].loop(-1); //parameter is empty or -1
+ }//End infinite times
+ //
+ //stop
+ if ( songs[currentSong].isPlaying() ) { .pause(); .rewind(); } else { .rewind(); }
+ //play-pause
  
 }// end key pressed
 
-void mousePressedMusic() {}
+void mousePressedMusic() {
+}//end mousePressedMusic
 //
 void concatenationOfMusicFiles() { 
    pathway = "songs/";
