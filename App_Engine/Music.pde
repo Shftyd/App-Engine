@@ -81,6 +81,7 @@ if ( songs[currentSong].isMuted() ) {
  //
  //stop
  if ( songs[currentSong].isPlaying() ) { .pause(); .rewind(); } else { .rewind(); }
+ //
  //play-pause
  
 }// end key pressed
