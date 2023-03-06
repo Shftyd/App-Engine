@@ -44,8 +44,28 @@ if ( songs[currentSong].isMuted() ) {
   song[currentSong].mute();
     }
   }//End Mute Button
-}
+
 //
+//forward & reverse skip
+ if ( key == 'f' || key == 'F' ) {
+   //skips forward to end of song
+   //ERROR: if at end, plays beginning
+ songs[currentSong].skip(1000); //parameter in milliseconds
+ } if else ( songs[currentSong].position() >=  songs[currentSong].length()*4/5 ) {
+ }  
+   //ERROR catch: if end of snog, then next song
+  //end forwarsd
+ 
+ if ( key == 'r' || key == 'R' ){
+   //spamming R means start playing at beginning of song
+   songs[currentSong].skip(-1000); //parameter in illiseconds
+ } // end reverse
+ //
+ //single loop
+ if ()  songs[currentSong].loop(1);
+ 
+}// end key pressed
+
 void mousePressedMusic() {}
 //
 void concatenationOfMusicFiles() { 
