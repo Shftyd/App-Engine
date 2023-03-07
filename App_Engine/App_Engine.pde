@@ -11,8 +11,7 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
 //Global Variables
-String Path = new File("").getAbsolutePath(); //Exported Program
-String directory = "//FS-052/studuser$/Gr11/a.harding/My Documents/GitHub/app-engine-review/App_Engine/songs"; //Not exported
+
 
 //
 void setup() {

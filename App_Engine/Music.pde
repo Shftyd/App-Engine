@@ -1,8 +1,8 @@
 //Gloabal Variables
 Minim minim; //cretes an object to access all functions
 AudioPlayer[] songs = new AudioPlayer[5]; //creates "Play List" variable holding extensions WAV, AIFF, AU, SND, and MP3
-AudioPlayer[] soundEffects = new AudioPlayer [0];
-String pathway, Fun Kid, Ghostbusters, Ice & Fire, It Was a Time, Jump;
+//AudioPlayer[] soundEffects = new AudioPlayer [0];
+String pathway, FunKid, Ghostbusters, IceandFire, ItWasaTime, Jump;
 int currentSong=0;
 //
 void musicSetup() {
@@ -13,11 +13,11 @@ minim = new Minim (this);
 //
 //Reminder : finish OS_Level Code to auto rea pathway and files (See OS)
 //
-concatentionOfMusicFiles();
-songs[0] = minim.loadFileI pathway + Fun Kid );
+concatenationOfMusicFiles();
+songs[0] = minim.loadFile( pathway + FunKid );
 songs[1] = minim.loadFile( pathway + Ghostbusters);
-songs[2] = minim.loadFile( pathway + Ice & Fire );
-songs[3] = minim.loadFile( pathway + It Was a Time );
+songs[2] = minim.loadFile( pathway + IceandFire );
+songs[3] = minim.loadFile( pathway + ItWasaTime );
 songs[4] = minim.loadFile( pathway + Jump );
 //soundEffects[] = minim.loadFile( path + soundEffectFile );
 //
@@ -30,8 +30,8 @@ void keyPressedMusic() {
 //Prototyping to copy when it works
 if ( key == 'm'|| key == 'M') {
 if ( songs[currentSong].isMuted() ) { 
-  song[currentSong].unmute();
-} else if (  songs[currentSong].position() >=  songs[currentSong].length()*4/5 ) {
+  songs[currentSong].unmute();
+} else if (  songs[currentSong].position() >=  songs[currentSong].length()*99/100 ) {
   //Students to ifnsih SMARTER Mute Button
   //ERROR: music player breaks if song finishes
   /* Ideas
@@ -41,7 +41,7 @@ if ( songs[currentSong].isMuted() ) {
   */
   songs[currentSong].rewind(); //simple solution, contains ERROR
 }  else {
-  song[currentSong].mute();
+  songs[currentSong].mute();
     }
   }//End Mute Button
 
@@ -51,7 +51,7 @@ if ( songs[currentSong].isMuted() ) {
    //skips forward to end of song
    //ERROR: if at end, plays beginning
  songs[currentSong].skip(1000); //parameter in milliseconds
- } else if ( songs[currentSong].position() >=  songs[currentSong].length()*4/5 ) {
+ } else if ( songs[currentSong].position() >=  songs[currentSong].length()*99/100 ) {
  }  else {
    
    //ERROR catch: if end of snog, then next song
@@ -80,10 +80,31 @@ if ( songs[currentSong].isMuted() ) {
  }//End infinite times
  //
  //stop
- if ( songs[currentSong].isPlaying() ) { .pause(); .rewind(); } else { .rewind(); }
+ if ( key == 's' || key == 'S') {//STOP Button
+ //note: include soft "PAUSE" for first 15 seconds of STOP
+ //note: include auto prevoid & next track if STOP at beginning or end of file
+ if ( songs[currentSong].isPlaying() ) { 
+ songs[currentSong].pause(); 
+ songs[currentSong].rewind(); 
+ } else { 
+ songs[currentSong].rewind(); 
+ }
+ }
  //
  //play-pause
+ if (key == 'p' || key == 'P') {//play-pause button
+ if ( songs[currentSong].isPlaying() ) {
+    songs[currentSong].pause();
+ } else if (songs[currentSong].position() >=  songs[currentSong].length()*99/100) {
+   // student to finish
+   // .pause(), .rewind(), then cue next song
+ } else {
+   songs[currentSong].play(); ///no auto rewind like loop()
+ }
+ } 
  
+ 
+ //
 }// end key pressed
 
 void mousePressedMusic() {
@@ -91,10 +112,10 @@ void mousePressedMusic() {
 //
 void concatenationOfMusicFiles() { 
    pathway = "songs/";
-   Fun Kid = "Fun Kid.mp3";
+   FunKid = "Fun Kid.mp3";
    Ghostbusters = "Ghostbusters.mp3";
-   Ice & Fire = "Ice & Fire.mp3";
-   It Was a Time = "It Was a Time.mp3";
+   IceandFire = "Ice & Fire.mp3";
+   ItWasaTime = "It Was a Time.mp3";
    Jump = "Jump.mp3";
 
 
