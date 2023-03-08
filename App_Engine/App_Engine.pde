@@ -15,23 +15,27 @@ import ddf.minim.ugens.*;
 
 //
 void setup() {
-  buttonsSetup();
+  fullScreen();
+  
   musicSetup();
+  songs[currentSong].loop(0);
   //
  //NULL is not export
  //Catch when NULL, not expoted
-   songs[currentSong].loop(0); //Change the index manually
+ 
   //
 }//End setup
 //
 void draw() {
+ buttonsSetup();
   //Debugging in CONSOLE
   println("Current Song Position", songs[currentSong].position() );
-  println("\tEnd of Song:", songs[currentSong].length() );
-}//End draw
+ println("\tEnd of Song:", songs[currentSong].length() );
 //
+}//End draw
 void keyPressed() {  
 keyPressedMusic();
+
 //
 
 }//End keyPerssed

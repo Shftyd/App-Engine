@@ -1,5 +1,6 @@
 //Global Variables
-//
+// Change the index manually
+
 void buttonsSetup() {
   //Landscape (protrait, square)
   //Populatoin, visual data
