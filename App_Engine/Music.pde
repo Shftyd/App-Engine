@@ -32,7 +32,7 @@ void keyPressedMusic() {
 if ( key == 'm'|| key == 'M') {
 if ( songs[currentSong].isMuted() ) { 
   songs[currentSong].unmute();
-} else if (  songs[currentSong].position() >=  songs[currentSong].length()*95/100 ) {
+} else if (  songs[currentSong].position() >=  songs[currentSong].length()*90/100 ) {
   //Students to ifnsih SMARTER Mute Button
   //ERROR: music player breaks if song finishes
   /* Ideas
@@ -52,7 +52,7 @@ if ( songs[currentSong].isMuted() ) {
    //skips forward to end of song
    //ERROR: if at end, plays beginning
  songs[currentSong].skip(1000); //parameter in milliseconds
- } else if ( songs[currentSong].position() >=  songs[currentSong].length()*95/100 ) {
+ } else if ( songs[currentSong].position() >=  songs[currentSong].length()*90/100 ) {
  }  else {
    
    //ERROR catch: if end of snog, then next song
@@ -96,7 +96,7 @@ if ( songs[currentSong].isMuted() ) {
  if (key == 'p' || key == 'P') {//play-pause button
  if ( songs[currentSong].isPlaying() ) {
     songs[currentSong].pause();
- } else if (songs[currentSong].position() >=  songs[currentSong].length()*95/100) {
+ } else if (songs[currentSong].position() >=  songs[currentSong].length()*90/100) {
    // student to finish
    // .pause(), .rewind(), then cue next song
    //CAUTON: without code, this conditional will not do anything
