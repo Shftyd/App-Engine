@@ -4,6 +4,7 @@ AudioPlayer[] songs = new AudioPlayer[5]; //creates "Play List" variable holding
 //AudioPlayer[] soundEffects = new AudioPlayer [0];
 String pathway, FunKid, Ghostbusters, IceandFire, ItWasaTime, Jump;
 int currentSong=0;
+Boolean autoPlayOn=false;
 //
 void musicSetup() {
 //
@@ -103,8 +104,46 @@ if ( songs[currentSong].isMuted() ) {
    songs[currentSong].play(); ///no auto rewind like loop()
  }
  } 
- 
- 
+ //
+  //Autoplay Button
+  if ( key == 'o' || key == 'O'  ) {
+    if ( autoPlayOn == false ) {
+      autoPlayOn = true;
+    } else {
+      autoPlayOn = false;
+    }
+  }//End Autoplay
+  //
+  //Next Song Button
+  //Note: very simple NEXT Button, needs to be smarter
+  if ( key == 'n' || key =='N' ) {
+    if ( songs[currentSong].isPlaying() ) {
+  
+    } else if  ( currentSong == songs.length - 1) { //ERROR Catch: ArrayOutOfBounds
+    currentSong = songs.length - songs.length; //Intentoin is Zero
+    songs[currentSong].rewind();
+    } else { 
+      currentSong++;
+      songs[currentSong].rewind();
+      
+    }
+  }//End Next Song Button
+  //
+  //Previous Song Button, Back Button
+  //Students to develop, based on next button
+  //if ( key == 'b' || key =='B' ) {} //End Previous Song Button or Back Button
+  //
+ if( key == 'b' || key =='B' ) {
+    if ( songs[currentSong].isPlaying() ) {
+    } else if  ( currentSong == songs.length + 1) { //ERROR Catch: ArrayOutOfBounds
+    currentSong = songs.length + songs.length; //Intentoin is Zero
+    songs[currentSong].rewind();
+    } else { 
+      currentSong--;
+      songs[currentSong].rewind();
+      
+    }
+  }//End Previous Song Button
  //
 }// end key pressed
 
@@ -118,6 +157,14 @@ void concatenationOfMusicFiles() {
    IceandFire = "Ice & Fire.mp3";
    ItWasaTime = "It Was a Time.mp3";
    Jump = "Jump.mp3";
-
-
-}
+}//End concatenation
+//
+void autoPlayMusic() {
+  if ( autoPlayOn ) {
+    //if () {} if else () {} else {}
+    //ex#1 .poition() >= .length(), then rewind(), currentSong+=1, .play()
+    //Ex#2: .isPlaying(), when false rewind(), currentSong+=1, .play()
+  }
+}//End Auto Play Music
+//
+//End Music SubProgram
