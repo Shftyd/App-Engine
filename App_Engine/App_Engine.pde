@@ -16,7 +16,6 @@ import ddf.minim.ugens.*;
 //
 void setup() {
   fullScreen();
-  
   musicSetup();
   songs[currentSong].loop(0);
   //
