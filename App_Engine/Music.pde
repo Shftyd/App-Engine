@@ -84,6 +84,9 @@ if ( key == 'm'|| key == 'M') {
     back();
   }//End Previous Song Button
  //
+ if ( key == 'u' || key == 'U' ) {
+   shuffleSongs();
+ }
 }// end key pressed
 
 void mousePressedMusic() {
@@ -203,8 +206,8 @@ if ( autoPlayOn == false ) {
   //
   void back() {
     if ( songs[currentSong].isPlaying() ) {
-    } else if  ( currentSong == songs.length + 1) { //ERROR Catch: ArrayOutOfBounds
-    currentSong = songs.length + songs.length; //Intentoin is Zero
+    } else if  ( songs[currentSong] == songs[currentSong].length + 1) { //ERROR Catch: ArrayOutOfBounds
+    songs[currentSong] = songs[currentSong].length + songs[currentSong].length; //Intentoin is Zero
     songs[currentSong].rewind();
     } else { 
       currentSong--;
@@ -212,4 +215,33 @@ if ( autoPlayOn == false ) {
       
     }
   }//end back
+  void shuffleSongs() {
+  if (shufflePlaylist) {
+    // Stop current track
+    songs[currentSong].close();
+    
+    // Shuffle playlist and reset currentTrack
+    songs[currentSong].shuffle(playlist);
+    songs[currentSong] = 0;
+    
+    // Load and play first track
+    songs[currentSong] = minim.loadFile(songs[currentSong].get(songs[currentSong]));
+    songs[currentSong].play();
+    
+    // Reset shufflePlaylist
+    shufflePlaylist = false;
+  }
+  
+  // Check if current track has finished playing
+  if (songs[currentSongplayer.position() == songs[currentSong.length()) {
+    // Load and play next track
+    songs[currentSong]++;
+    if (songs[currentSong] >= playlist.size()) {
+      songs[currentSong] = 0;
+    }
+    songs[currentSong] = minim.loadFile(songs[currentSong].get(songs[currentSong]));
+    songs[currentSong].play();
+  }
+}
+}
 //End Music SubProgram
