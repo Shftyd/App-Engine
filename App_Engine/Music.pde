@@ -85,7 +85,7 @@ if ( key == 'm'|| key == 'M') {
   }//End Previous Song Button
  //
  if ( key == 'u' || key == 'U' ) {
-   shuffleSongs();
+  // shuffleSongs();
  }
 }// end key pressed
 
@@ -206,17 +206,18 @@ if ( autoPlayOn == false ) {
   //
   void back() {
     if ( songs[currentSong].isPlaying() ) {
-    } else if  ( songs[currentSong] == songs[currentSong].length + 1) { //ERROR Catch: ArrayOutOfBounds
-    songs[currentSong] = songs[currentSong].length + songs[currentSong].length; //Intentoin is Zero
-    songs[currentSong].rewind();
+    } else if  ( currentSong == songs.length + 1) {//ERROR Catch: ArrayOutOfBounds
+      songs[currentSong].rewind();
+    currentSong = songs.length + songs.length; //Intentoin is Zero
+    
     } else { 
       currentSong--;
       songs[currentSong].rewind();
       
     }
   }//end back
-  void shuffleSongs() {
-  if (shufflePlaylist) {
+/*  void shuffleSongs() {
+  if (songs) {
     // Stop current track
     songs[currentSong].close();
     
@@ -233,7 +234,7 @@ if ( autoPlayOn == false ) {
   }
   
   // Check if current track has finished playing
-  if (songs[currentSongplayer.position() == songs[currentSong.length()) {
+  if (songs[currentSongplayer].position() == songs[currentSong].length()) {
     // Load and play next track
     songs[currentSong]++;
     if (songs[currentSong] >= playlist.size()) {
@@ -243,5 +244,5 @@ if ( autoPlayOn == false ) {
     songs[currentSong].play();
   }
 }
-}
+*/
 //End Music SubProgram
