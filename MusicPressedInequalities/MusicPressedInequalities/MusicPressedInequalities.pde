@@ -24,7 +24,7 @@ void draw() {
   //example STOP button: button is the logical recangle
   if ( mouseX>=stopX && mouseX<=stopX+stopWidth && mouseY>=stopY && mouseY<=stopY+stopHeight )  
   {
-    println("Hovering Over Button");
+    println("Hovering Over Stop Button");
   } else 
   {
   println("");
@@ -43,7 +43,7 @@ void mousePressed() {
   */
   if ( mouseX>=stopX && mouseX<=stopX+stopWidth && mouseY>=stopY && mouseY<=stopY+stopHeight ) 
   {
-    println("Button Pressed");
+    println("Stop Button Pressed");
     stopHoverOver = true;
   }
 }//end mousepressed
