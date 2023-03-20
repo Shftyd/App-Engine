@@ -3,6 +3,8 @@
 //global variables
 //
 float stopX, stopY, stopWidth, stopHeight;
+boolean stopHoverOver=false;
+//
 void setup() {
   fullScreen();
   //
@@ -20,6 +22,13 @@ void setup() {
 //  
 void draw() {
   //example STOP button: button is the logical recangle
+  if ( mouseX>=stopX && mouseX<=stopX+stopWidth && mouseY>=stopY && mouseY<=stopY+stopHeight )  
+  {
+    println("Hovering Over Button");
+  } else 
+  {
+  println("");
+  }
   rect(stopX, stopY, stopWidth, stopHeight);
 }//end draw
 //
@@ -27,7 +36,16 @@ void keyPressed() {
 }//end keypressed
 //
 void mousePressed() {
-  if (mouseX>=stopX && mouseX<=stopX+stopWidth && mouseY>=stopY && mouseY<=stopY+stopHeight) prinln("Button Pressed");
+  //
+  /*
+  mouseX>=stopX && mouseX<=stopX+stopWidth && mouseY>=stopY && mouseY<=stopY+stopHeight
+  then, add the variables of the rect()
+  */
+  if ( mouseX>=stopX && mouseX<=stopX+stopWidth && mouseY>=stopY && mouseY<=stopY+stopHeight ) 
+  {
+    println("Button Pressed");
+    stopHoverOver = true;
+  }
 }//end mousepressed
 //
 //end main program
