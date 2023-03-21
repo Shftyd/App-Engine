@@ -13,6 +13,12 @@ float nextSongX, nextSongY, nextSongWidth, nextSongHeight;
 float previousSongX1, previousSongY1, previousSongX2, previousSongY2, previousSongX3, previousSongY3;
 float previousSongX, previousSongY, previousSongWidth, previousSongHeight;
 float muteX, muteY, muteWidth, muteHeight;
+float reverseRectX, reverseRectY, reverseRectWidth, reverseRectHeight;
+float forwardRecX, forwardRectY, forwardRectWidth, forwardRectHeight;
+float loopRectX, loopRectY, loopRectWidth, loopRectHeight;
+float nextRectX, nextRectY, nextRectWidth, nextRectHeight;
+float prevoiusRectX, previousRectY, previousRectWidth, previousRectHeight;
+float playPauseRectX, playPauseRectY, playPauseRectWidth, playPauseRectHeight;
 float x1, y1, x2, y2, x3, y3;
 color black=#000000, green=#00FF00, red=#FF0000, blue=#0000FF, purple=#FF00FF, white=#FFFFFF, resetcolorNightMode=#FFFF4B;//Night Mode Friendly
 color resetcolorDayMode=#FFFFFF;//Not Night Mode Friendly

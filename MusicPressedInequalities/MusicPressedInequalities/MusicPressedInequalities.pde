@@ -4,6 +4,8 @@
 //
 //float stopX, stopY, stopWidth, stopHeight;
 boolean stopHoverOver=false;
+boolean muteHoverOver=false;
+boolean loopHoverOver=false;
 //
 void setup() {
   fullScreen();
@@ -44,13 +46,18 @@ void setup() {
   reverseX3 = width * 6/20;
   reverseY3 = height * 11/20;
   
- reverseX4 = width * 6/20;
- reverseY4 = height * 10/20;  
- reverseX5 = width * 6/20;
- reverseY5 = height * 12/20;
- reverseX6 = width * 5/20;
- reverseY6 = height * 11/20;
-  //
+  reverseX4 = width * 6/20;
+  reverseY4 = height * 10/20;  
+  reverseX5 = width * 6/20;
+  reverseY5 = height * 12/20;
+  reverseX6 = width * 5/20;
+  reverseY6 = height * 11/20;
+ /*
+ reverseRectX = ;
+ reverseRectY = ;
+ reverseRectWidth = ;
+ reverseRectHeight = ;
+*/  //
    forwardX1 = width * 13/20;
    forwardY1 = height * 10/20;
    forwardX2 = width * 13/20;
@@ -74,6 +81,11 @@ void setup() {
   loopY2 = height * 11/20;
   loopWidth2 = pauseHeight/2;
   loopHeight2 = pauseHeight/6;
+  
+  loopRectX = width * 8/10;
+  loopRectY = pauseY1;
+  loopRectWidth = pauseHeight/2;
+  loopRectHeight = pauseHeight/2;
   //
   muteX = width * 3/20;
   muteY = pauseY1;
@@ -122,7 +134,24 @@ void draw() {
   {
   println("");
   }
+  //
+  if ( mouseX>=muteX && mouseX<=muteX+muteWidth && mouseY>=muteY && mouseY<=muteY+muteHeight )  
+  {
+    println("Hovering Over Mute Button");
+  } else 
+  {
+  println("");
+  }
+  //
+  if ( mouseX>=loopRectX && mouseX<=loopRectX+loopRectWidth && mouseY>=loopRectY && mouseY<=loopRectY+loopRectHeight )  
+  {
+    println("Hovering Over loop Button");
+  } else 
+  {
+  println("");
+  }
   rect(stopX, stopY, stopWidth, stopHeight);
+ 
 }//end draw
 //
 void keyPressed() {
@@ -146,10 +175,16 @@ void mousePressed() {
     stopHoverOver = true;
   }*/
   //
-  if ( mouseX>=stopX && mouseX<=stopX+stopWidth && mouseY>=stopY && mouseY<=stopY+stopHeight ) 
+  if ( mouseX>=muteX && mouseX<=muteX+muteWidth && mouseY>=muteY && mouseY<=muteY+muteHeight ) 
   {
-    println("Stop Button Pressed");
-    stopHoverOver = true;
+    println("Mute Button Pressed");
+    muteHoverOver = true;
+  }
+  //
+   if ( mouseX>=loopRectX && mouseX<=loopRectX+loopRectWidth && mouseY>=loopRectY && mouseY<=loopRectY+loopRectHeight ) 
+  {
+    println("loop Button Pressed");
+    loopHoverOver = true;
   }
 }//end mousepressed
 //
