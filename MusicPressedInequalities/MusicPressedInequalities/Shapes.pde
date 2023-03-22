@@ -14,7 +14,7 @@ float previousSongX1, previousSongY1, previousSongX2, previousSongY2, previousSo
 float previousSongX, previousSongY, previousSongWidth, previousSongHeight;
 float muteX, muteY, muteWidth, muteHeight;
 float reverseRectX, reverseRectY, reverseRectWidth, reverseRectHeight;
-float forwardRecX, forwardRectY, forwardRectWidth, forwardRectHeight;
+float forwardRectX, forwardRectY, forwardRectWidth, forwardRectHeight;
 float loopRectX, loopRectY, loopRectWidth, loopRectHeight;
 float nextRectX, nextRectY, nextRectWidth, nextRectHeight;
 float prevoiusRectX, previousRectY, previousRectWidth, previousRectHeight;

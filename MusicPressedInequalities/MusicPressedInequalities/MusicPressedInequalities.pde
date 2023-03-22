@@ -6,6 +6,9 @@
 boolean stopHoverOver=false;
 boolean muteHoverOver=false;
 boolean loopHoverOver=false;
+boolean reverseHoverOver=false;
+boolean forwardHoverOver=false;
+boolean nextHoverOver=false;
 //
 void setup() {
   fullScreen();
@@ -52,12 +55,12 @@ void setup() {
   reverseY5 = height * 12/20;
   reverseX6 = width * 5/20;
   reverseY6 = height * 11/20;
- /*
- reverseRectX = ;
- reverseRectY = ;
- reverseRectWidth = ;
- reverseRectHeight = ;
-*/  //
+
+ reverseRectX = width *5/20;
+ reverseRectY = height * 10/20;
+ reverseRectWidth = width * 1/10;
+ reverseRectHeight = height * 1/10;
+  //
    forwardX1 = width * 13/20;
    forwardY1 = height * 10/20;
    forwardX2 = width * 13/20;
@@ -71,6 +74,11 @@ void setup() {
    forwardY5 = height * 12/20;
    forwardX6 = width * 15/20;
    forwardY6 = height * 11/20;
+   
+   forwardRectX = width * 13/20;
+   forwardRectY = height * 1/2;
+   forwardRectWidth = width * 1/10;
+   forwardRectHeight = height * 1/10;
   //
   loopX1 = width * 8/10;
   loopY1 = pauseY1;
@@ -122,6 +130,11 @@ void setup() {
   nextSongY = height * 13/20;
   nextSongWidth = width * 1/80;
   nextSongHeight = height * 3/30;
+  
+  nextRectX = width * 14/20;
+  nextRectY = height * 13/20;
+  nextRectWidth = width * 5/80;
+  nextRectHeight = height * 1/10;
 }//end setup
 //  
 void draw() {
@@ -150,8 +163,35 @@ void draw() {
   {
   println("");
   }
+  //
+  if ( mouseX>=reverseRectX && mouseX<=reverseRectX+reverseRectWidth && mouseY>=reverseRectY && mouseY<=reverseRectY+reverseRectHeight )  
+  {
+    println("Hovering Over Reverse Button");
+  } else 
+  {
+  println("");
+  }
+  //
+  if ( mouseX>=forwardRectX && mouseX<=forwardRectX+forwardRectWidth && mouseY>=forwardRectY && mouseY<=forwardRectY+forwardRectHeight )  
+  {
+    println("Hovering Over Forward Button");
+  } else 
+  {
+  println("");
+  }
+  //
+  if ( mouseX>=nextRectX && mouseX<=nextRectX+nextRectWidth && mouseY>=nextRectY && mouseY<=nextRectY+nextRectHeight )  
+  {
+    println("Hovering Over Next Button");
+  } else 
+  {
+  println("");
+  }
+  
   rect(stopX, stopY, stopWidth, stopHeight);
- 
+ //rect(reverseRectX, reverseRectY, reverseRectWidth, reverseRectHeight);
+ //rect(forwardRecX, forwardRectY, forwardRectWidth, forwardRectHeight);
+ //rect(nextRectX, nextRectY, nextRectWidth, nextRectHeight);
 }//end draw
 //
 void keyPressed() {
@@ -185,6 +225,24 @@ void mousePressed() {
   {
     println("loop Button Pressed");
     loopHoverOver = true;
+  }
+  //
+   if ( mouseX>=reverseRectX && mouseX<=reverseRectX+reverseRectWidth && mouseY>=reverseRectY && mouseY<=reverseRectY+reverseRectHeight ) 
+  {
+    println("Reverse Button Pressed");
+    reverseHoverOver = true;
+  }
+  //
+  if ( mouseX>=forwardRectX && mouseX<=forwardRectX+forwardRectWidth && mouseY>=forwardRectY && mouseY<=forwardRectY+forwardRectHeight ) 
+  {
+    println("Forward Button Pressed");
+    forwardHoverOver = true;
+  }
+  //
+   if ( mouseX>=nextRectX && mouseX<=nextRectX+nextRectWidth && mouseY>=nextRectY && mouseY<=nextRectY+nextRectHeight ) 
+  {
+    println("Next Button Pressed");
+    nextHoverOver = true;
   }
 }//end mousepressed
 //
