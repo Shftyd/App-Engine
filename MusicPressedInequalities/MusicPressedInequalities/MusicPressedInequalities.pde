@@ -9,6 +9,8 @@ boolean loopHoverOver=false;
 boolean reverseHoverOver=false;
 boolean forwardHoverOver=false;
 boolean nextHoverOver=false;
+boolean previousHoverOver=false;
+boolean playpauseHoverOver=false;
 //
 void setup() {
   fullScreen();
@@ -118,6 +120,11 @@ void setup() {
  previousSongY = height * 13/20;
  previousSongWidth = width * 1/80;
  previousSongHeight = height * 3/30;
+ 
+ previousRectX = width * 9.5/40;
+ previousRectY = height * 13/20;
+ previousRectWidth = width * 5/80;
+ previousRectHeight = height * 1/10;
  //
   nextSongX1 = width * 14/20;
   nextSongY1 = height * 13/20;
@@ -135,6 +142,11 @@ void setup() {
   nextRectY = height * 13/20;
   nextRectWidth = width * 5/80;
   nextRectHeight = height * 1/10;
+  //
+  playPauseRectX = width * 14/30;
+  playPauseRectY = height * 10/20;
+  playPauseRectWidth = width * 7/80;
+  playPauseRectHeight = height * 2/10;
 }//end setup
 //  
 void draw() {
@@ -187,11 +199,29 @@ void draw() {
   {
   println("");
   }
+  //
+  if ( mouseX>=previousRectX && mouseX<=previousRectX+previousRectWidth && mouseY>=previousRectY && mouseY<=previousRectY+previousRectHeight )  
+  {
+    println("Hovering Over Previous Button");
+  } else 
+  {
+  println("");
+  }
+  //
+   if ( mouseX>=playPauseRectX && mouseX<=playPauseRectX+playPauseRectWidth && mouseY>=playPauseRectY && mouseY<=playPauseRectY+playPauseRectHeight )  
+  {
+    println("Hovering Over Play-Pause Button");
+  } else 
+  {
+  println("");
+  }
   
   rect(stopX, stopY, stopWidth, stopHeight);
  //rect(reverseRectX, reverseRectY, reverseRectWidth, reverseRectHeight);
  //rect(forwardRecX, forwardRectY, forwardRectWidth, forwardRectHeight);
  //rect(nextRectX, nextRectY, nextRectWidth, nextRectHeight);
+ //rect(previousRectX, previousRectY, previousRectWidth, previousRectHeight);
+ //rect(playPauseRectX, playPauseRectY, playPauseRectWidth, playPauseRectHeight);
 }//end draw
 //
 void keyPressed() {
@@ -208,12 +238,6 @@ void mousePressed() {
     println("Stop Button Pressed");
     stopHoverOver = true;
   }
-  //
-   /*if ( mouseX>=pauseX && mouseX<=stopX+stopWidth && mouseY>=stopY && mouseY<=stopY+stopHeight ) 
-  {
-    println("Stop Button Pressed");
-    stopHoverOver = true;
-  }*/
   //
   if ( mouseX>=muteX && mouseX<=muteX+muteWidth && mouseY>=muteY && mouseY<=muteY+muteHeight ) 
   {
@@ -244,6 +268,19 @@ void mousePressed() {
     println("Next Button Pressed");
     nextHoverOver = true;
   }
+  //
+    if ( mouseX>=previousRectX && mouseX<=previousRectX+previousRectWidth && mouseY>=previousRectY && mouseY<=previousRectY+previousRectHeight ) 
+  {
+    println("Previous Button Pressed");
+    previousHoverOver = true;
+  }
+  //
+  if ( mouseX>=playPauseRectX && mouseX<=playPauseRectX+playPauseRectWidth && mouseY>=playPauseRectY && mouseY<=playPauseRectY+playPauseRectHeight ) 
+  {
+    println("Play-Pause Button Pressed");
+    playpauseHoverOver = true;
+  }
+  //
 }//end mousepressed
 //
 //end main program
