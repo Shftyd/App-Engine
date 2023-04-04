@@ -7,6 +7,8 @@
 void setup() {
   fullScreen();
   rectSetup();
+  textSetup();//must be void setup
+  textDraw();//can be anywhere
 }// End setup
 //
 void draw() {
