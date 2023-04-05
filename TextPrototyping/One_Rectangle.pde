@@ -1,5 +1,5 @@
 // Text is always put in one retangle
-float rectX,rectY,rectWidth,rectHeight;
+float rectX, rectY, rectWidth, rectHeight;
 //
 void rectSetup() {
   rectX= width * 8/20;
@@ -9,7 +9,7 @@ void rectSetup() {
 }// End rectSetup
 //
 void rectDraw() {
-  rect(rectX,rectY,rectWidth,rectHeight);
+  rect(rectX, rectY, rectWidth, rectHeight);
 }// End rectDraw
 //
 void rectKeyPressed() {
