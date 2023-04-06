@@ -4,14 +4,16 @@
  -note:  could also be a "HoverOver" Feature
  */
 //
+boolean drawText=false;
+//
 void setup() {
   fullScreen();
   flatText();
   rectSetup();
   textSetup();//must be void setup
   //Blow
-  textDraw( height, purpleInk, CENTER, CENTER, font, string, rectX, rectY, rectWidth, rectHeight );//can be anywhere
-  textDraw( height, purpleInk, CENTER, CENTER, font, stringAlternate, rectX, rectY+height*1/4, rectWidth, rectHeight );//can be anywhere
+  textDraw( height, purpleInk, CENTER, CENTER, Arial, string, rectX, rectY, rectWidth, rectHeight );//can be anywhere
+  //textDraw( height, purpleInk, CENTER, CENTER, Arial, stringAlternate, rectX, rectY+height*1/4, rectWidth, rectHeight );//can be anywhere
 }// End setup
 //
 void draw() {
@@ -29,7 +31,7 @@ void flatText() { //Reviewing Introductory Text Code
   float textRectX, textRectY, textRectWidth, textRectHeight;
   PFont font;
   color purpleInk= #131FE8, resetWhiteInk=#FFFFFF; //Not nice for Night Mode, Blue Content
-  String string = "I need off the learning bus! Spring Break is not over.";
+  String string = "I dont know why my other text isnt working";
   //
   //Population, from display
   textRectX = width*1/5;
