@@ -14,6 +14,7 @@ boolean playpauseHoverOver=false;
 //
 void setup() {
   fullScreen();
+  stopText();
   //
   //population, before moving to VOID in a Subprogram
   float startingX = width * 1/2;
