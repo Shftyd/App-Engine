@@ -6,7 +6,7 @@
 int appWidth, appHeight;
 float imageBackgroundX, imageBackgroundY, imageBackgroundWidth, imageBackgroundHeight;
 PImage pic;
-Boolean nightMode=false;
+Boolean nightMode=true;
 float whiteSpace=0.0, picX_Adjusted=0.0, picY_Adjusted=0.0;
 float picWidthAdjusted=0.0, picHeightAdjusted=0.0; //IF requires previous value, not NULL
 Boolean imageCenter=true, imageRightBottom=false; //Vars Image Justification
@@ -17,7 +17,7 @@ appWidth = width ;
 appHeight = height ;
 //
 //Population
-
+imageBackgroundX = appWidth * 0 ;
 imageBackgroundY = appHeight * 0 ;
 imageBackgroundWidth = appWidth - 1 ;
 imageBackgroundHeight = appHeight - 1 ;
@@ -46,7 +46,7 @@ if ( picWidth >= picHeight ) { //TRUE if Landscape or Square
   picX_Adjusted = imageBackgroundX;
   picY_Adjusted = imageBackgroundY;
   if ( imageCenter==true ) picY_Adjusted = imageBackgroundY + whiteSpace*1/2;
-  if ( imageRightBottom==true) picY_Adjusted = imageBackgroundY + whiteSpace;
+  if ( imageRightBottom==true) picY_Adjusted = imageBackgroundY+ whiteSpace;
   //
   if ( picHeightAdjusted > imageBackgroundHeight ) { //ERROR Catch: adusted height is bigger then rect()
     picHeightAdjusted = imageBackgroundHeight;
@@ -60,13 +60,31 @@ if ( picWidth >= picHeight ) { //TRUE if Landscape or Square
     if ( imageRightBottom==true) picX_Adjusted = imageBackgroundX + whiteSpace;
   }
 } else { //FALSE if Portrait
-  //Students to finish
-  /* largerDimension = picHeight ;
-   smallerDimension = picWidth ;
-   imageWidthRatio = smallerDimension / largerDimension ; //Ratio is <=1
-   picHeightAdjusted = imageBackgroundHeight ;//Compressed into rect()
-   picWidthAjusted = imageBackgroundHeight * imagewidthRatio ;
-   */
+  smallerDimension = picWidth;
+  largerDimension = picHeight;
+  imageWidthRatio = float(smallerDimension) / float(largerDimension);
+  picHeightAdjusted = imageBackgroundHeight;
+  picWidthAdjusted = picHeightAdjusted * imageWidthRatio;
+  //if image fits in rect: format or justify image
+  whiteSpace = imageBackgroundWidth - picWidthAdjusted;
+  //if image left justified, then no change to X-Var
+  picY_Adjusted = imageBackgroundY;
+  picX_Adjusted = imageBackgroundX;
+  if (imageCenter == true) picX_Adjusted = imageBackgroundX + whiteSpace*1/2;
+  if (imageRightBottom == true) picX_Adjusted = imageBackgroundX + whiteSpace;
+  //
+  if (picWidthAdjusted > imageBackgroundWidth) {
+    //ERROR Catch: adjusted width is bigger than rect()
+    picWidthAdjusted = imageBackgroundWidth;
+    picHeightAdjusted = picWidthAdjusted * imageWidthRatio;
+    //if image fits in rect: format or justify image
+    whiteSpace = imageBackgroundHeight - picHeightAdjusted;
+    //if image left justified, then no change to Y-Var
+    picY_Adjusted = imageBackgroundY;
+    picX_Adjusted = imageBackgroundX;
+    if (imageCenter == true) picY_Adjusted = imageBackgroundY + whiteSpace*1/2;
+    if (imageRightBottom == true) picY_Adjusted = imageBackgroundY + whiteSpace;
+  }
 }
 //
 //Rectangle layout and Image drawing to CANVAS
