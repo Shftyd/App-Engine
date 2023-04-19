@@ -17,7 +17,11 @@ import ddf.minim.ugens.*;
 void setup() {
   fullScreen();
   musicSetup();
-  songs[currentSong].loop(0);
+  if (songs[currentSong] != null) {
+    songs[currentSong].loop(0);
+  } else {
+    println("ERROR: songs[" + currentSong + "] is null");
+  }
   //
  //NULL is not export
  //Catch when NULL, not expoted
