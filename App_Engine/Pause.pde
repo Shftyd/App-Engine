@@ -1,11 +1,33 @@
 //Global Variables
 // Change the index manually
-
+boolean stopHoverOver=false;
+boolean muteHoverOver=false;
+boolean loopHoverOver=false;
+boolean reverseHoverOver=false;
+boolean forwardHoverOver=false;
+boolean nextHoverOver=false;
+boolean previousHoverOver=false;
+boolean playpauseHoverOver=false;
+//
 void buttonsSetup() {
+  buttonsDraw();
+  buttonsMousePressed();
   //Landscape (protrait, square)
   //Populatoin, visual data
   //fullScreen(); //displayWidth, displayHeight 
    drawMusicButtons();
+  //
+  //population, before moving to VOID in a Subprogram
+  float startingX = width * 1/2;
+  float startingY = height * 1/2;
+  float buttonReferentMeasure = width * 1/9;// 7 buttons plus 2 button of space
+  float buttonSide = buttonReferentMeasure; //All buttons are squares
+  //
+ /* stopX = startingX - 4.5 * (buttonReferentMeasure) ;
+  stopY = startingY ;
+  stopWidth = buttonSide;
+  stopHeight = buttonSide;*/
+   
 
   float musicButtonDrawX = width * 1/2;
   float musicButtonDrawY = height * 1/2;
@@ -31,12 +53,17 @@ void buttonsSetup() {
   reverseX3 = width * 6/20;
   reverseY3 = height * 11/20;
   
- reverseX4 = width * 6/20;
- reverseY4 = height * 10/20;  
- reverseX5 = width * 6/20;
- reverseY5 = height * 12/20;
- reverseX6 = width * 5/20;
- reverseY6 = height * 11/20;
+  reverseX4 = width * 6/20;
+  reverseY4 = height * 10/20;  
+  reverseX5 = width * 6/20;
+  reverseY5 = height * 12/20;
+  reverseX6 = width * 5/20;
+  reverseY6 = height * 11/20;
+
+ reverseRectX = width *5/20;
+ reverseRectY = height * 10/20;
+ reverseRectWidth = width * 1/10;
+ reverseRectHeight = height * 1/10;
   //
    forwardX1 = width * 13/20;
    forwardY1 = height * 10/20;
@@ -51,6 +78,11 @@ void buttonsSetup() {
    forwardY5 = height * 12/20;
    forwardX6 = width * 15/20;
    forwardY6 = height * 11/20;
+   
+   forwardRectX = width * 13/20;
+   forwardRectY = height * 1/2;
+   forwardRectWidth = width * 1/10;
+   forwardRectHeight = height * 1/10;
   //
   loopX1 = width * 8/10;
   loopY1 = pauseY1;
@@ -61,6 +93,11 @@ void buttonsSetup() {
   loopY2 = height * 11/20;
   loopWidth2 = pauseHeight/2;
   loopHeight2 = pauseHeight/6;
+  
+  loopRectX = width * 8/10;
+  loopRectY = pauseY1;
+  loopRectWidth = pauseHeight/2;
+  loopRectHeight = pauseHeight/2;
   //
   muteX = width * 3/20;
   muteY = pauseY1;
@@ -74,7 +111,7 @@ void buttonsSetup() {
  x3 = width * 11/20;
  y3 = height * 6/10;
  //
-  previousSongX1 = width * 6/20;
+ previousSongX1 = width * 6/20;
  previousSongY1 = height * 13/20;
  previousSongX2 = width * 6/20;
  previousSongY2 = height * 15/20;
@@ -85,6 +122,11 @@ void buttonsSetup() {
  previousSongY = height * 13/20;
  previousSongWidth = width * 1/80;
  previousSongHeight = height * 3/30;
+ 
+ previousRectX = width * 9.5/40;
+ previousRectY = height * 13/20;
+ previousRectWidth = width * 5/80;
+ previousRectHeight = height * 1/10;
  //
   nextSongX1 = width * 14/20;
   nextSongY1 = height * 13/20;
@@ -97,17 +139,150 @@ void buttonsSetup() {
   nextSongY = height * 13/20;
   nextSongWidth = width * 1/80;
   nextSongHeight = height * 3/30;
-}//End setup
-//
+  
+  nextRectX = width * 14/20;
+  nextRectY = height * 13/20;
+  nextRectWidth = width * 5/80;
+  nextRectHeight = height * 1/10;
+  //
+  playPauseRectX = width * 14/30;
+  playPauseRectY = height * 10/20;
+  playPauseRectWidth = width * 7/80;
+  playPauseRectHeight = height * 2/10;
+}//end setup
+//  
 void buttonsDraw() {
-  drawMusicButtons();
-  rect(pauseX1, pauseY1, pauseWidth, pauseHeight );
-  rect(pauseX2, pauseY2, pauseWidth, pauseHeight);
-
-}//End draw
+  //example STOP button: button is the logical recangle
+   drawMusicButtons();
+  if ( mouseX>=stopX && mouseX<=stopX+stopWidth && mouseY>=stopY && mouseY<=stopY+stopHeight )  
+  {
+    println("Hovering Over Stop Button");
+  } else 
+  {
+  println("");
+  }
+  //
+  if ( mouseX>=muteX && mouseX<=muteX+muteWidth && mouseY>=muteY && mouseY<=muteY+muteHeight )  
+  {
+    println("Hovering Over Mute Button");
+  } else 
+  {
+  println("");
+  }
+  //
+  if ( mouseX>=loopRectX && mouseX<=loopRectX+loopRectWidth && mouseY>=loopRectY && mouseY<=loopRectY+loopRectHeight )  
+  {
+    println("Hovering Over loop Button");
+  } else 
+  {
+  println("");
+  }
+  //
+  if ( mouseX>=reverseRectX && mouseX<=reverseRectX+reverseRectWidth && mouseY>=reverseRectY && mouseY<=reverseRectY+reverseRectHeight )  
+  {
+    println("Hovering Over Reverse Button");
+  } else 
+  {
+  println("");
+  }
+  //
+  if ( mouseX>=forwardRectX && mouseX<=forwardRectX+forwardRectWidth && mouseY>=forwardRectY && mouseY<=forwardRectY+forwardRectHeight )  
+  {
+    println("Hovering Over Forward Button");
+  } else 
+  {
+  println("");
+  }
+  //
+  if ( mouseX>=nextRectX && mouseX<=nextRectX+nextRectWidth && mouseY>=nextRectY && mouseY<=nextRectY+nextRectHeight )  
+  {
+    println("Hovering Over Next Button");
+  } else 
+  {
+  println("");
+  }
+  //
+  if ( mouseX>=previousRectX && mouseX<=previousRectX+previousRectWidth && mouseY>=previousRectY && mouseY<=previousRectY+previousRectHeight )  
+  {
+    println("Hovering Over Previous Button");
+  } else 
+  {
+  println("");
+  }
+  //
+   if ( mouseX>=playPauseRectX && mouseX<=playPauseRectX+playPauseRectWidth && mouseY>=playPauseRectY && mouseY<=playPauseRectY+playPauseRectHeight )  
+  {
+    println("Hovering Over Play-Pause Button");
+  } else 
+  {
+  println("");
+  }
+  
+  rect(stopX, stopY, stopWidth, stopHeight);
+ //rect(reverseRectX, reverseRectY, reverseRectWidth, reverseRectHeight);
+ //rect(forwardRecX, forwardRectY, forwardRectWidth, forwardRectHeight);
+ //rect(nextRectX, nextRectY, nextRectWidth, nextRectHeight);
+ //rect(previousRectX, previousRectY, previousRectWidth, previousRectHeight);
+ //rect(playPauseRectX, playPauseRectY, playPauseRectWidth, playPauseRectHeight);
+}//end draw
 //
-void buttonsKeyPressed () {}//End keyPressed
+//void keyPressed() {
+//}//end keypressed
 //
-void buttonsMousePressed() {}//End mousePressed
+void buttonsMousePressed() {
+  //
+  /*
+  mouseX>=stopX && mouseX<=stopX+stopWidth && mouseY>=stopY && mouseY<=stopY+stopHeight
+  then, add the variables of the rect()
+  */
+  if ( mouseX>=stopX && mouseX<=stopX+stopWidth && mouseY>=stopY && mouseY<=stopY+stopHeight ) 
+  {
+    println("Stop Button Pressed");
+    stopHoverOver = true;
+  }
+  //
+  if ( mouseX>=muteX && mouseX<=muteX+muteWidth && mouseY>=muteY && mouseY<=muteY+muteHeight ) 
+  {
+    println("Mute Button Pressed");
+    muteHoverOver = true;
+  }
+  //
+   if ( mouseX>=loopRectX && mouseX<=loopRectX+loopRectWidth && mouseY>=loopRectY && mouseY<=loopRectY+loopRectHeight ) 
+  {
+    println("loop Button Pressed");
+    loopHoverOver = true;
+  }
+  //
+   if ( mouseX>=reverseRectX && mouseX<=reverseRectX+reverseRectWidth && mouseY>=reverseRectY && mouseY<=reverseRectY+reverseRectHeight ) 
+  {
+    println("Reverse Button Pressed");
+    reverseHoverOver = true;
+  }
+  //
+  if ( mouseX>=forwardRectX && mouseX<=forwardRectX+forwardRectWidth && mouseY>=forwardRectY && mouseY<=forwardRectY+forwardRectHeight ) 
+  {
+    println("Forward Button Pressed");
+    forwardHoverOver = true;
+  }
+  //
+   if ( mouseX>=nextRectX && mouseX<=nextRectX+nextRectWidth && mouseY>=nextRectY && mouseY<=nextRectY+nextRectHeight ) 
+  {
+    println("Next Button Pressed");
+    nextHoverOver = true;
+  }
+  //
+    if ( mouseX>=previousRectX && mouseX<=previousRectX+previousRectWidth && mouseY>=previousRectY && mouseY<=previousRectY+previousRectHeight ) 
+  {
+    println("Previous Button Pressed");
+    previousHoverOver = true;
+  }
+  //
+  if ( mouseX>=playPauseRectX && mouseX<=playPauseRectX+playPauseRectWidth && mouseY>=playPauseRectY && mouseY<=playPauseRectY+playPauseRectHeight ) 
+  {
+    println("Play-Pause Button Pressed");
+    playpauseHoverOver = true;
+  }
+  //
+}//end mousepressed
 //
-//End MAIN Program (Driver)
+//end main program

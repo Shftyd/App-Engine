@@ -22,6 +22,7 @@ void setup() {
   } else {
     println("ERROR: songs[" + currentSong + "] is null");
   }
+  songs[currentSong].loop();
   //
  //NULL is not export
  //Catch when NULL, not expoted
@@ -32,8 +33,8 @@ void setup() {
 void draw() {
  buttonsSetup();
   //Debugging in CONSOLE
-  println("Current Song Position", songs[currentSong].position() );
- println("\tEnd of Song:", songs[currentSong].length() );
+ // println("Current Song Position", songs[currentSong].position() );
+// println("\tEnd of Song:", songs[currentSong].length() );
 //
 }//End draw
 void keyPressed() {  

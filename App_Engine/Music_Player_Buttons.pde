@@ -8,11 +8,17 @@ float forwardX1, forwardY1, forwardX2, forwardY2, forwardX3, forwardY3;
 float forwardX4, forwardY4, forwardX5, forwardY5, forwardX6, forwardY6;
 float loopX1, loopY1, loopWidth1, loopHeight1;
 float loopX2, loopY2, loopWidth2, loopHeight2;
-float muteX, muteY, muteWidth, muteHeight;
 float nextSongX1, nextSongY1, nextSongX2, nextSongY2, nextSongX3, nextSongY3;
 float nextSongX, nextSongY, nextSongWidth, nextSongHeight;
 float previousSongX1, previousSongY1, previousSongX2, previousSongY2, previousSongX3, previousSongY3;
 float previousSongX, previousSongY, previousSongWidth, previousSongHeight;
+float muteX, muteY, muteWidth, muteHeight;
+float reverseRectX, reverseRectY, reverseRectWidth, reverseRectHeight;
+float forwardRectX, forwardRectY, forwardRectWidth, forwardRectHeight;
+float loopRectX, loopRectY, loopRectWidth, loopRectHeight;
+float nextRectX, nextRectY, nextRectWidth, nextRectHeight;
+float previousRectX, previousRectY, previousRectWidth, previousRectHeight;
+float playPauseRectX, playPauseRectY, playPauseRectWidth, playPauseRectHeight;
 float x1, y1, x2, y2, x3, y3;
 color black=#000000, green=#00FF00, red=#FF0000, blue=#0000FF, purple=#FF00FF, white=#FFFFFF, resetcolorNightMode=#FFFF4B;//Night Mode Friendly
 color resetcolorDayMode=#FFFFFF;//Not Night Mode Friendly

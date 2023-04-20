@@ -3,7 +3,7 @@ Minim minim; //cretes an object to access all functions
 AudioPlayer[] songs = new AudioPlayer[5]; //creates "Play List" variable holding extensions WAV, AIFF, AU, SND, and MP3
 //AudioPlayer[] soundEffects = new AudioPlayer [0];
 String pathway, FunKid, Ghostbusters, IceandFire, ItWasaTime, Jump;
-int currentSong=0;
+int currentSong=1;
 Boolean autoPlayOn=false;
 //
 void musicSetup() {
@@ -15,7 +15,7 @@ minim = new Minim (this);
 //Reminder : finish OS_Level Code to auto rea pathway and files (See OS)
 //
 concatenationOfMusicFiles();
-songs[0] = minim.loadFile( pathway + FunKid );
+songs[1] = minim.loadFile( pathway + FunKid );
 songs[1] = minim.loadFile( pathway + Ghostbusters);
 songs[2] = minim.loadFile( pathway + IceandFire );
 songs[3] = minim.loadFile( pathway + ItWasaTime );
@@ -94,10 +94,10 @@ void mousePressedMusic() {
 //
 void concatenationOfMusicFiles() { 
    pathway = "songs/";
-   FunKid = "Fun Kid.mp3";
+   FunKid = "Fun_Kid.mp3";
    Ghostbusters = "Ghostbusters.mp3";
-   IceandFire = "Ice & Fire.mp3";
-   ItWasaTime = "It Was a Time.mp3";
+   IceandFire = "Ice_&_Fire.mp3";
+   ItWasaTime = "It_Was_a_Time.mp3";
    Jump = "Jump.mp3";
 }//End concatenation
 //
@@ -216,7 +216,7 @@ if ( autoPlayOn == false ) {
       
     }
   }//end back
-/*  void shuffleSongs() {
+/* void shuffleSongs() {
   if (songs) {
     // Stop current track
     songs[currentSong].close();
