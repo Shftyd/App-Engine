@@ -31,6 +31,7 @@ void setup() {
 }//End setup
 //
 void draw() {
+  textSetup();
  buttonsSetup();
   //Debugging in CONSOLE
  // println("Current Song Position", songs[currentSong].position() );
