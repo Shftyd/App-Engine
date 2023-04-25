@@ -6,11 +6,11 @@ void textSetup() {
   String string = "Stop";
   //
   //Population, from display
- /* textRectX = width*1/5;
-  textRectY = height*1/10;
-  textRectWidth = width*3/5;
-  textRectHeight = height*1/10;
- */ //
+  /* textRectX = width*1/5;
+   textRectY = height*1/10;
+   textRectWidth = width*3/5;
+   textRectHeight = height*1/10;
+   */  //
   rect( stopX, stopY, stopWidth, stopHeight );
   /*
    println("Start of Console");

@@ -1,4 +1,4 @@
- /* CAUTION, code not finished
+/* CAUTION, code not finished
  Also see Music SubProgram
  */
 //Global Variables

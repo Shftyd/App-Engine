@@ -1,6 +1,6 @@
-/* CAUTION 
-  This Code will cause the array songs to be null sometimes.
-  This must be error checked
+/* CAUTION
+ This Code will cause the array songs to be null sometimes.
+ This must be error checked
  */
 //
 import ddf.minim.*;
@@ -24,29 +24,28 @@ void setup() {
   }
   songs[currentSong].loop();
   //
- //NULL is not export
- //Catch when NULL, not expoted
- 
+  //NULL is not export
+  //Catch when NULL, not expoted
+
   //
 }//End setup
 //
 void draw() {
   textSetup();
- buttonsSetup();
+  buttonsSetup();
   //Debugging in CONSOLE
- // println("Current Song Position", songs[currentSong].position() );
-// println("\tEnd of Song:", songs[currentSong].length() );
-//
+  // println("Current Song Position", songs[currentSong].position() );
+  // println("\tEnd of Song:", songs[currentSong].length() );
+  //
 }//End draw
-void keyPressed() {  
-keyPressedMusic();
+void keyPressed() {
+  keyPressedMusic();
+  buttonsMousePressed();
 
-//
-
+  //
 }//End keyPerssed
 //
-void mousePressed() {  
-
+void mousePressed() {
 }//End mousePressed
 //
 //End MAIN program s(Driver)

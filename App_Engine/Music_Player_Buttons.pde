@@ -37,7 +37,7 @@ void drawMusicButtons() {
 //
 void drawPauseButton() {
   fill(white);
-rect(pauseX1, pauseY1, pauseWidth, pauseHeight );
+  rect(pauseX1, pauseY1, pauseWidth, pauseHeight );
   rect(pauseX2, pauseY2, pauseWidth, pauseHeight);
   fill(resetcolorDayMode);
 }//End drawPauseButton
@@ -62,7 +62,7 @@ void drawReverseSkipButton() {
 void drawForwardSkipButton() {
   fill(green);
   triangle( forwardX1, forwardY1, forwardX2, forwardY2, forwardX3, forwardY3);
- triangle(forwardX4, forwardY4, forwardX5, forwardY5, forwardX6, forwardY6);
+  triangle(forwardX4, forwardY4, forwardX5, forwardY5, forwardX6, forwardY6);
   fill(resetcolorDayMode);
 }
 
